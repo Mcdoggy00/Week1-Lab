@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Robot Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    spline-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* Changed from 1 to -1 to put it behind content */
+    }
+    /* Example responsive content styling */
+    .content {
+      position: relative;
+      z-index: 2; /* Changed from 1 to 2 to ensure it's above the spline-viewer */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*justify-content: center;*/
+      min-height: 100vh;
+      padding: 2rem;
+      color: #000000;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .content {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+    /* Overlay labels positioned left and right of the robot */
+    .overlay-label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background: rgba(255,255,255,0.75);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+    .label-left {
+      left: 10rem;
+    }
+    .label-right {
+      right: 15rem;
+      text-align: right;
+    }
+    @media (max-width: 600px) {
+      .overlay-label {display: none;} 
+    }
+  </style>
+</head>
+<body>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+  <spline-viewer url="https://prod.spline.design/oE2jpwrZ8kUEwtES/scene.splinecode" events-target="global"></spline-viewer>
+  <div class="overlay-label label-left">Jeane Marco V. Suarez</div>
+  <div class="overlay-label label-right">BSIT 3.4</div>
+  <div class="content">
+   
+    <h1>LAB 2 PROTOTYPE</h1>
+  </div>
+</body>
+</html>
