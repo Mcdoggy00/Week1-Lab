@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Scene</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        spline-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            touch-action: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+    <spline-viewer 
+        url="https://prod.spline.design/3wbcLaznXdpB1eq3/scene.splinecode"
+        events-target="global"
+        orbit-control="enabled"
+        mouse-control="enabled"
+        drag-control="enabled"
+        touch-control="enabled"
+        loading-anim="true">
+    </spline-viewer>
+    <div class="content">
+        <!-- Add your content here -->
+        <h1>Interactive Light Scene</h1>
+    </div>
+    <div>
+        <h3>jeane marco suarez</h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Robot Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    spline-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1; /* Changed to 1 to allow interaction */
+      touch-action: none;
+      -webkit-user-select: none;
+      user-select: none;
+      background: transparent;
+    }
+    /* Example responsive content styling */
+    .content {
+      position: relative;
+      z-index: 0; /* Changed to 0 to allow interaction with spline-viewer */
+      pointer-events: none; /* Allow clicks to pass through to spline-viewer */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*justify-content: center;*/
+      min-height: 100vh;
+      padding: 2rem;
+      color: #ffffff;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .content {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+  <spline-viewer 
+    url="https://prod.spline.design/nPo6um0FOLKJoACd/scene.splinecode"
+    events-target="global"
+    orbit-control="enabled"
+    mouse-control="enabled"
+    drag-control="enabled"
+    touch-control="enabled"
+    loading-anim="true"
+    style="background: transparent;">
+  </spline-viewer>
+  <div class="content">
+    <h1></h1>
+  </div>
+</body>
+</html>
